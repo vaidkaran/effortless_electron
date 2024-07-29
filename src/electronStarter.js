@@ -52,7 +52,9 @@ function createWindow () {
 
   // and load the index.html of the app.
   // mainWindow.loadFile('index.html')
-  mainWindow.loadURL('https://effortless-test.onrender.com/')
+  const url = process.env.NODE_ENV === 'qa' ? 'https://effortless-test.onrender.com' : 'http://localhost:3000';
+  console.info(`Using: ${url}`);
+  mainWindow.loadURL(url)
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
