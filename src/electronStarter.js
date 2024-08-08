@@ -2,6 +2,8 @@
 const { app, BrowserWindow, session } = require('electron')
 const path = require('node:path')
 
+if (require('electron-squirrel-startup')) app.quit();
+
 function UpsertKeyValue(obj, keyToChange, value) {
   const keyToChangeLower = keyToChange.toLowerCase();
   for (const key of Object.keys(obj)) {
