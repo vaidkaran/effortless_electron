@@ -15,7 +15,7 @@
     "make": "electron-forge make",
     "publish": "electron-forge publish"
   },
-  "author": "",
+  "author": "Karan Vaid",
   "license": "ISC",
   "devDependencies": {
     "@electron-forge/cli": "^7.4.0",
