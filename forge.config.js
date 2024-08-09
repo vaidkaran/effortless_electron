@@ -25,8 +25,8 @@ module.exports = {
       name: '@electron-forge/publisher-github',
       config: {
         repository: {
-          owner: 'Karan Vaid',
-          name: 'Effortless Test'
+          owner: 'vaidkaran',
+          name: 'effortless_electron'
         },
         prerelease: true
       }
