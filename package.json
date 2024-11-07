@@ -1,6 +1,6 @@
 {
   "name": "effortless_electron",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "effortless electron app",
   "main": "src/electronStarter.js",
   "dependencies": {
