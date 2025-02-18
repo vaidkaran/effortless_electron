@@ -28,6 +28,9 @@ function createWindow () {
     }
   })
 
+  // clear cache so that electron fetches latest changes to effortless_fe
+  mainWindow.webContents.session.clearCache();
+
 
   //------------------------------------------------------------------
 
