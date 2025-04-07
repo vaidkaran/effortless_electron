@@ -1,5 +1,6 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow, session } = require('electron')
+const { app, BrowserWindow, session, dialog } = require('electron')
+const {version: currentVersion} = require('../package.json');
 const path = require('node:path')
 
 if (require('electron-squirrel-startup')) app.quit();
@@ -78,6 +79,15 @@ app.whenReady().then(() => {
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
+}).then(() => {
+  return fetch('https://api.github.com/repos/vaidkaran/effortless_electron/releases/latest')
+}).then((res) => {
+  return res.json();
+}).then((jsonRes) => {
+  if(`v${currentVersion}` !== jsonRes.name) dialog.showMessageBox({ title: `You're using an outdated version v${currentVersion}\n\nPlease download and install the latest version ${jsonRes.name}\n\n${jsonRes.html_url}`});
+  else console.log('On the latest version of electron app');
+}).catch((err) => {
+  console.error('Error occured in fetching the latest release version', err);
 })
 
 // Quit when all windows are closed, except on macOS. There, it's common
