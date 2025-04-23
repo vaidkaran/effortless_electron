@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:qa": "NODE_ENV=qa electron .",
-    "start": "NODE_ENV=local electron .",
+    "start": "NODE_ENV=dev electron .",
     "start:forge": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",

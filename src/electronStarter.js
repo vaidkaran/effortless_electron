@@ -58,8 +58,10 @@ function createWindow () {
 
   // and load the index.html of the app.
   // mainWindow.loadFile('index.html')
-  const url = process.env.NODE_ENV === 'local' ? 'http://localhost:3000' : 'https://effortless-test.vercel.app';
-  console.info(`Using: ${url}`);
+  const env = process.env.NODE_ENV;
+  if (env === 'dev') url = 'http://localhost:3000'
+  else if (env === 'qa') url = 'https://effortless-test-fe-qa.vercel.app'
+  else url = 'https://effortless-test-fe.vercel.app'
   mainWindow.loadURL(url)
 
   // Open the DevTools.
